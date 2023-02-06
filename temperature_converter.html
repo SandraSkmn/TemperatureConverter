@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Conversion</title>
+
+    <link rel="stylesheet" href="style_temperature.css" type="text/css" id="style_sheet">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        type="text/css">
+
+    <script src="temperature.js" type="text/javascript"></script>
+
+
+</head>
+
+<!--Input for temperature conversion will be as a form the user has to fill in-->
+
+<body>
+    <div id="background_container" class="background_light">
+        <!--Buttons to allow switch between light and dark mode-->
+        <div id="dark_light_mode" class="button_mode_light">
+            <button type="button" name="light" id="light" onclick="setThemeLight()">Light
+            </button>
+            <button type="button" name="dark" id="dark" onclick="setThemeDark()">Dark
+            </button>
+        </div>
+        <div id="container" class="container_light">
+            <div id="form-container">
+                <form name="my_form" method="GET" action="#">
+                    <div id="heading">
+                        <h1> Temperature Converter <h1>
+                                <i class="fas fa-snowflake"></i>
+                    </div>
+                    <!--Input for temperature value to convert-->
+                    <div id="temp_input">
+                        <label>Input temperature to convert: </label>
+                        <input type="number" id="input_temp" name="input_temp" placeholder="Enter a number" value=""
+                            required>
+                    </div>
+                    <div id="form_inputs">
+                        <!--Input for user to decide which temperature scale to convert from-->
+                        <div id="dropdown_input_div">
+                            <label for="dropdown_input">Convert from:</label>
+                            <select name="dropdown_input" id="dropdown_input">
+                                <option value="celcius">Celcius</option>
+                                <option value="fahrenheit">Fahrenheit</option>
+                                <option value="kelvin">Kelvin</option>
+                            </select>
+                        </div>
+                        <!--Input for user to decide which temperature scale to convert to-->
+                        <div id="dropdown_output_div">
+                            <label for="dropdown_output">To:</label>
+                            <select name="dropdown_output" id="dropdown_output">
+                                <option value="celcius">Celcius</option>
+                                <option value="fahrenheit">Fahrenheit</option>
+                                <option value="kelvin">Kelvin</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!--Slider input for user to pick how many decimal places answer will be rounded to-->
+                    <div id="decimal_places_div">
+                        <label>Answer to how many decimal places?</label>
+                        <div id="slider_and_labels">
+                            <input type="range" , min="0" , max="3" id="decimals">
+                            <datalist id="tick_marks">
+                                <option value="0" label="0"></option>
+                                <option value="1" label="1"></option>
+                                <option value="2" label="2"></option>
+                                <option value="3" label="3"></option>
+                            </datalist>
+                        </div>
+                    </div>
+                    <!--Submit button - input type is button rather than submit as it keeps refreshing otherwise once submit pressed!-->
+                    <div id="submit_button">
+                        <input type="button" value="Submit" onclick="FormSubmit()">
+                    </div>
+                </form>
+                <div id="output_div" class="output_light">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
