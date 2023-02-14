@@ -12,7 +12,7 @@ body {
 }
 
 .background_light {
-    background-image: url(../Images/background.jpg);
+    background-image: url('../Images/background.jpg');
     background-size: 300px;
     display: flex;
     justify-content: center;
@@ -21,7 +21,7 @@ body {
 }
 
 .background_dark {
-    background-image: url(../Images/background2.jpg);
+    background-image: url('../Images/background2.jpg');
     background-size: 100vw 100vh;
     display: flex;
     justify-content: center;
